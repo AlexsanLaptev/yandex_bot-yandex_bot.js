@@ -12,20 +12,20 @@
 
 let keywords = ["вывод произвольных полей wordpress", "pods wordpress", "10 самых популярных шрифтов от Yandex", "Отключение редакций и ревизий в WordPress"];
 
-let btnK = document.getElementsByName('btnK')[0];
+let btn = document.getElementsByClassName('button mini-suggest__button')[0];
 let links = document.links;
 let keyword = keywords[getRandom(0,keywords.length)];
 let YandexInput = document.getElementsByName('q')[0];
 let i = 0;
 
 
-if(btnK !== undefined){
+if(btn !== undefined){
 	let timerId = setInterval(()=> {
 		YandexInput.value += keyword[i];
 		i++;
 		if(i == keyword.length) {
 			clearInterval(timerId);
-			btnK.click();
+			btn.click();
 		}
 	}, 1000);
 
